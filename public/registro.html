@@ -47,10 +47,10 @@
 
     <section class="form-login" id="app">
         <i><h5>!Bienvenid@¡</h5></i>
-        <input class="controls" v-model="Clientes.Nombre" type="text" name="Nombre" value="" placeholder="Nombre completo" id="Nombre">
-        <input class="controls" v-model="Clientes.Correo" type="text" name="Correo" value="" placeholder="Email" id="Correo">
-        <input class="controls" v-model="Clientes.Telefono" type="tel" name="Telefono" value="" placeholder="Telefono" id="Telefono">
-        <input class="controls" v-model="Clientes.Passwordd" type="password" name="Passwordd" placeholder="Contraseña" id="Passwordd">
+        <input class="controls" v-model="clientes.nomcliente" type="text" name="nomcliente" value="" placeholder="Nombre completo" id="Nombre">
+        <input class="controls" v-model="clientes.telefono" type="tel" name="telefono" value="" placeholder="Telefono" id="Telefono">
+        <input class="controls" v-model="clientes.correo" type="text" name="correo" value="" placeholder="Email" id="Correo">
+        <input class="controls" v-model="clientes.passwordd" type="password" name="passwordd" placeholder="Contraseña" id="Passwordd">
         <button type="button"  class="buttons" id="btnguardar" @click="enviarDatos">Registrarse</button>
         <p style="color: black;">Ya tienes una cuenta? <a href="inicio-sesion.html">     Inicia Sesion</a></p>
     </section>
@@ -133,20 +133,20 @@
   var app =new Vue({
       el:'#app',
       data:{
-          Clientes:{
-            Nombre:"",
-            Correo:"",
-            Telefono:"",
-            Passwordd:""
+          clientes:{
+            nomcliente:"",
+            telefono:"",
+            correo:"",
+            passwordd:""
           },
       },
       methods:{
           enviarDatos:function(){
             var params =new URLSearchParams();
-              params.append('Nombre', this.Clientes.Nombre);
-               params.append('Correo', this.Clientes.Correo);
-                params.append('Telefono', this.Clientes.Telefono);
-                 params.append('Passwordd', this.Clientes.Passwordd);
+              params.append('nomcliente', this.clientes.nomcliente);
+              params.append('telefono', this.clientes.telefono);
+              params.append('correo', this.clientes.correo);
+              params.append('passwordd', this.clientes.passwordd);
 
               axios.post('controller/insertarcliente.php', params)
               .then(function(response)

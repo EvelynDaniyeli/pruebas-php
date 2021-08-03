@@ -10,8 +10,8 @@
          * Conexion constructor.
          */
         public static $DB = null;
-        public $dbname = "Detalles";
-        public $host = "localhos";
+        public $dbname = "detalles";
+        public $host = "localhost";
         public $user = "root";
         public $password = "admin";
         /**ic

@@ -15,10 +15,10 @@
         /**
          * @var array
          */
-        protected $filleable = ["Nombre", "Correo", "Telefono", "Passwordd"];
-        protected $table = "Clientes";
-        public $Nombre = "";
-        public $Correo = "";
-        public $Telefono = "";
-        public $Passwordd = "";    
+        protected $filleable = ["nomcliente", "telefono",  "correo", "passwordd"];
+        protected $table = "clientes";
+        public $nomcliente = "";
+        public $telefono = "";
+        public $correo = "";
+        public $passwordd = "";    
     }

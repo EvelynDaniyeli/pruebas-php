@@ -10,12 +10,11 @@
   
         extract($_POST);
         $c = new Cliente();
-        $c->Nombre=$Nombre;
-        $c->Correo=$Correo;
-        $c->Telefono=$Telefono;
-        $c->Passwordd=$Passwordd;
+        $c->nomcliente=$nomcliente;
+        $c->telefono=$telefono;
+        $c->correo=$correo;
+        $c->passwordd=$passwordd;
         $c->save();
-      
       
       echo  json_encode( $c->all());
     
